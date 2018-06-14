@@ -1,0 +1,39 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+      <div class="row">
+          <div class="col-md-12">
+              <h4 class="pull-left">
+                  List of Downloads
+                  <b>(slug = downloads)</b> <a class="btn btn-xs" target="_blank" href="http://localhost:3000/downloads" data-original-title="" title=""><i class="fa fa-eye"></i> Visit</a>
+              </h4>
+              <a class="btn btn-primary pull-right cama_ajax_request" href="/admin/post_type/31/posts/new" data-original-title="" title=""><i class="fa fa-plus"></i> Add Downloads</a>
+          </div>
+      </div>
+  </div>
+  <div class="panel-body">
+    <table class="table table-responsive table-hover table-striped" id="posts-table-list">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Usuário</th>
+
+          <th>Arquivo</th>
+          <th>Data</th>
+          <th>Informações adicionais</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @downloads.each do |download| %>
+          <tr data-id="4" class="sortable">
+            <td><%= download.id %></td>
+            <td><%= download.user %></td>
+            <td><%= download.file %></td>
+            <td><%= l(download.created_at) %></td>
+            <td><%= download.metadata.to_s %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+  </div>
+</div>

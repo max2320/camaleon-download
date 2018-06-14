@@ -1,0 +1,16 @@
+{
+  "title": "Camaleon Downloads",
+  "descr": "",
+  "key": "camaleon_download", // must be the name of the folder of your plugin, sample: app/views/plugins/<my_plugin> ==> 'my_plugin'
+  "helpers": [
+    "Plugins::CamaleonDownload::MainHelper"
+  ],
+  "hooks": {
+    "on_active": ["camaleon_download_on_active"],
+    "on_inactive": ["camaleon_download_on_inactive"],
+    "plugin_options": ["camaleon_download_on_plugin_options"],
+    "admin_before_load": ["camaleon_download_before_load"],
+    "app_before_load": ["camaleon_download_add_shortcodes"]
+    //here you can add all your hooks (read documentation)
+  }
+}
