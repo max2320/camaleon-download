@@ -60,7 +60,7 @@ module Plugins::CamaleonDownload::MainHelper
     downloads = current_site.post_types.hidden_menu.where(slug: "downloads").first
 
     unless downloads.present?
-      downloads = current_site.post_types.hidden_menu.new(slug: "downloads", name: "Downloads")
+      downloads = current_site.post_types.hidden_menu.new(slug: "downloads", name: "Arquivos")
 
       if downloads.save
         downloads.set_options({
